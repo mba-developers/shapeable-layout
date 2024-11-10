@@ -22,16 +22,16 @@ class ShapeableConstraintLayout @JvmOverloads constructor(
     init {
         context.theme.obtainStyledAttributes(
             attrs,
-            R.styleable.CustomConstraintLayout,
+            R.styleable.ShapeableConstraintLayout,
             0, 0
         ).apply {
             try {
-                val shape = getInt(R.styleable.CustomConstraintLayout_shapeDrawable, GradientDrawable.RECTANGLE)
-                val radius = getDimension(R.styleable.CustomConstraintLayout_cornerRadius, 0f)
-                val solidColor = getColor(R.styleable.CustomConstraintLayout_solidColor, ContextCompat.getColor(context, android.R.color.transparent))
-                strokeColor = getColor(R.styleable.CustomConstraintLayout_strokeColor, ContextCompat.getColor(context, android.R.color.black))
-                strokeWidth = getDimensionPixelSize(R.styleable.CustomConstraintLayout_strokeWidth, 0)
-                val elevation = getDimension(R.styleable.CustomConstraintLayout_elevation, 0f)
+                val shape = getInt(R.styleable.ShapeableConstraintLayout_shapeDrawable, GradientDrawable.RECTANGLE)
+                val radius = getDimension(R.styleable.ShapeableConstraintLayout_cornerRadius, 0f)
+                val solidColor = getColor(R.styleable.ShapeableConstraintLayout_solidColor, ContextCompat.getColor(context, android.R.color.transparent))
+                strokeColor = getColor(R.styleable.ShapeableConstraintLayout_strokeColor, ContextCompat.getColor(context, android.R.color.black))
+                strokeWidth = getDimensionPixelSize(R.styleable.ShapeableConstraintLayout_strokeWidth, 0)
+                val elevation = getDimension(R.styleable.ShapeableConstraintLayout_elevation, 0f)
 
                 background = createCustomDrawable(
                     shapeDrawable = shape,

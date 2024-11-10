@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CustomConstraintLayout">
+    <declare-styleable name="ShapeableConstraintLayout">
         <attr name="shapeDrawable">
             <enum name="rectangle" value="0" />
             <enum name="oval" value="1" />

@@ -52,7 +52,7 @@ publishing {
                 from(components["release"])
                 groupId = "com.github.mba-developers" // Your group ID
                 artifactId = "shapeable-layout" // Your artifact ID
-                version = "1.014" // Your version
+                version = "1.015" // Your version
             }
         }
     }

@@ -33,6 +33,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
 }
 
 dependencies {
@@ -45,30 +53,15 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-
 afterEvaluate {
-    // Configure the publishing block after evaluation
-    (extensions.getByName("publishing") as PublishingExtension).apply {
+    publishing {
         publications {
             create<MavenPublication>("release") {
-                // Configure the publication to use the release component
                 from(components["release"])
 
                 groupId = "com.github.mba-developers" // Your group ID
                 artifactId = "shapeable-layout" // Your artifact ID
                 version = "1.0" // Your version
-            }
-        }
-
-        repositories {
-            maven {
-                // Publish to a local Maven repository
-                url = uri("${project.rootDir}/maven-repo")
-                // Uncomment if publishing to a remote repository:
-                // credentials {
-                //     username = project.findProperty("mavenUser") as String? ?: System.getenv("MAVEN_USER")
-                //     password = project.findProperty("mavenPassword") as String? ?: System.getenv("MAVEN_PASSWORD")
-                // }
             }
         }
     }

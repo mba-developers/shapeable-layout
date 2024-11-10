@@ -1,4 +1,3 @@
-import com.android.build.gradle.internal.utils.createPublishingInfoForApp
 
 plugins {
     alias(libs.plugins.android.library)

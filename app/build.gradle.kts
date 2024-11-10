@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mbadevelopers.shapeablelayout"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.mbadevelopers.shapeablelayout"

@@ -33,10 +33,6 @@ android {
         jvmTarget = "1.8"
     }
 
-    publishing {
-        singleVariant("release")
-    }
-
 }
 
 dependencies {
@@ -49,12 +45,11 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            afterEvaluate {
                 from(components["release"])
-
                 groupId = "com.github.mba-developers" // Your group ID
                 artifactId = "shapeable-layout" // Your artifact ID
                 version = "1.0" // Your version
